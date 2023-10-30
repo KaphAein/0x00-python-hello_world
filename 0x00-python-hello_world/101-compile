@@ -1,2 +1,2 @@
-#!/usr/bin/python3
-python -m py_compile $PYFILE
+#!/usr/bin/
+python3 -c "import py_compile; py_compile.compile('$PYFILE', '$PYFILE' + 'c')"
