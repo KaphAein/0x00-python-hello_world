@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 for i in range(26, 0, -1):
-    if(i % 2 == 0):
+    if i % 2 == 0 :
         c = chr(i + 96)
     else:
         c = chr(i + 64)
