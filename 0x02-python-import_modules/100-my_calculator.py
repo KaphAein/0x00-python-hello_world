@@ -13,13 +13,13 @@ if __name__ == "__main__":
     b = int(x[3])
 
     if x[2] == "+":
-        print("{} + {} = {}".format(a, b, a + b))
+        print("{} + {} = {}".format(a, b, add(a, b)))
     elif x[2] == "-":
-        print("{} - {} = {}".format(a, b, a - b))
+        print("{} - {} = {}".format(a, b, sub(a, b)))
     elif x[2] == "*":
-        print("{} * {} = {}".format(a, b, a * b))
+        print("{} * {} = {}".format(a, b, mul(a, b)))
     elif x[2] == "/":
-        print("{} / {} = {}".format(a, b, a / b))
+        print("{} / {} = {}".format(a, b, div(a, b)))
     else:
         print("Unknown operator. Available operators: +, -, * and /")
         sys.exit(1)
