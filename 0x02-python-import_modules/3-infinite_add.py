@@ -9,4 +9,4 @@ if __name__ == "__main__":
     else:
         for i in range(count):
             result += int(av[i + 1])
-    print("{}".format(result))
+        print("{}".format(result))
