@@ -4,7 +4,6 @@ if __name__ == "__main__":
     import sys
     x = sys.argv
     count = len(x) - 1
-
     a = int(x[1])
     b = int(x[3])
 
