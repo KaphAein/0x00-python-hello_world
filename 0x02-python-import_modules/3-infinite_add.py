@@ -7,8 +7,8 @@ if __name__ == "__main__":
     if count == 0:
         print("0")
     elif count == 1:
-        print("{:d}".format(av[1]))
+        print("{}".format(av[1]))
     else:
         for i in range(count):
             result += int(av[i + 1])
-    print("{:d}".format(result))
+    print("{}".format(result))
