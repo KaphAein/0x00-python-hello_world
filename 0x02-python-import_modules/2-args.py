@@ -10,4 +10,4 @@ if __name__ == "__main__":
     else:
         print("{} arguments:".format(len(av) - 1))
     for i in range(len(av) - 1):
-        print("{}: {}".format(i + 1, av[i + 1])
+        print("{}: {}".format(i + 1, av[i + 1]))
