@@ -2,20 +2,23 @@
 if __name__ == "__main__":
     from calculator_1 import *
     import sys
-    a = sys.argv
-    count = len(a) - 1
+    x = sys.argv
+    count = len(x) - 1
+
+    a = int(x[1])
+    b = int(x[3])
 
     if count != 3:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         sys.exit(1)
-    if a[2] == "+":
-        print("{} + {} = {}".format(a[1], a[3], (int(a[1]) + int(a[3]))))
+    if x[2] == "+":
+        print("{} + {} = {}".format(a, b, a + b))
     elif a[2] == "-":
-        print("{} - {} = {}".format(a[1], a[3], (int(a[1]) - int(a[3]))))
+        print("{} - {} = {}".format(a, b, a - b))
     elif a[2] == "*":
-        print("{} * {} = {}".format(a[1], a[3], (int(a[1]) * int(a[3]))))
+        print("{} * {} = {}".format(a, b, a * b))
     elif a[2] == "/":
-        print("{} / {} = {}".format(a[1], a[3], (int(a[1]) / int(a[3]))))
+        print("{} / {} = {}".format(a, b, a / b))
     else:
         print("Unknown operator. Available operators: +, -, * and /")
         sys.exit(1)
