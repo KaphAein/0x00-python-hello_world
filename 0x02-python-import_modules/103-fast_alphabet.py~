@@ -1,0 +1,3 @@
+#!/usr/bin/python3
+alph in range(65, 91)
+print("{}".format(alph))
