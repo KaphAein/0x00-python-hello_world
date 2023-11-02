@@ -6,8 +6,6 @@ if __name__ == "__main__":
     result = 0
     if count == 0:
         print("0")
-    elif count == 1:
-        print("{}".format(av[1]))
     else:
         for i in range(count):
             result += int(av[i + 1])
