@@ -6,6 +6,4 @@ def print_reversed_list_integer(my_list=[]):
             temp = my_list[i]
             my_list[i] = my_list[count - i]
             my_list[count - i] = temp
-            print("{}".format(my_list[i])
-        else:
-            break
+            print("{}".format(my_list[i]))
