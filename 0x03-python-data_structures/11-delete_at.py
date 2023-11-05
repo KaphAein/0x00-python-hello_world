@@ -9,3 +9,4 @@ def delete_at(my_list=[], idx=0):
                 continue
             else:
                 new_list[i] = my_list[i]
+        return new_list
