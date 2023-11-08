@@ -4,8 +4,8 @@ def weight_average(my_list=[]):
         return 0
     sum_score = 0
     agg = 0
-    else:
-        for key, value in my_list.items():
-            sum_score += value
-            agg += key * value
-        return  agg / sum_score
+    for pair in my_list:
+        weight, score = pair
+        sum_score += score
+        agg += weight * score
+    return  agg / sum_score
