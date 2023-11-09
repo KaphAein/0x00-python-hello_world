@@ -2,7 +2,7 @@
 def complex_delete(a_dictionary, value):
     del_key = []
 
-    if a_dictionary and value:
+    if a_dictionary is not None and value is not None:
         for key, val in a_dictionary.items():
             if val == value:
                 del_key.append(key)
