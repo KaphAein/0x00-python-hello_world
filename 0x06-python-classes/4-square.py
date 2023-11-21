@@ -16,12 +16,12 @@ class Square:
     @size.setter
     def size(self, value):
         """setter for attribute size"""
-     if isinstance(value, int) and value >= 0:
-         self.__size = value
-     elif not isinstance(value, int):
-         raise TypeError("size must be an integer")
-     else:
-         raise ValueError("size must be >= 0")
+        if isinstance(value, int) and value >= 0:
+            self.__size = value
+        elif not isinstance(value, int):
+            raise TypeError("size must be an integer")
+        else:
+            raise ValueError("size must be >= 0")
 
     def area(self):
         """Represent area of Square"""
