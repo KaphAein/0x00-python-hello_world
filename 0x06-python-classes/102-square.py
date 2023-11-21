@@ -36,6 +36,7 @@ class Square:
                 for j in range(self.__size):
                     print("#", end="")
                 print()
+
     def __eq__(self, other):
         """Define the == comparision to a Square."""
         return self.area() == other.area()
