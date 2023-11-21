@@ -36,7 +36,7 @@ class Node:
         """Represents next_node attribute setter"""
         if value is not None and not isinstance(value, Node):
             raise TypeError("next_node must be a Node object")
-        self.next_node = value
+        self.__next_node = value
 
 
 """Defines a LinkedList class"""
@@ -51,9 +51,9 @@ class SinglyLinkedList:
     def sorted_insert(self, value):
         """Method to add nodes in a sorted list"""
         new = Node(value)
-        if self.__head is None or self._head.data > value:
+        if self.__head is None or self.__head.data > value:
             new.next_node = self.__head
-            self._head = new
+            self.__head = new
 
         current = self.__head
         while current.next_node and current.next_node.data < value:
@@ -65,6 +65,8 @@ class SinglyLinkedList:
     def display(self):
         """Method to print nodes in a sorted list"""
         current = self.__head
+        new_list = []
         while current:
-            print(current.data)
+            new_list.append(str(current.data))
             current = current.next_node
+        return '\n'.join(values)
