@@ -5,7 +5,12 @@
 class Square:
     """Represent a Square"""
     def __init__(self, size=0, position=(0, 0)):
-        """Defines attribute size of a Square"""
+        """Initialize a new square.
+
+        Args:
+            size (int): The size of the new square.
+            position (int, int): The position of the new square.
+        """
         self.__size = size
         self.__position = position
 
@@ -52,9 +57,9 @@ class Square:
         if not self.__size:
             print()
             return
-        if self.__position[1] > 0:
-            for i in range(self.__position[1]):
-                print()
+
+        for i in range(self.__position[1]):
+            print()
 
         for i in range(self.__size):
             for k in range(self.__position[0]):
