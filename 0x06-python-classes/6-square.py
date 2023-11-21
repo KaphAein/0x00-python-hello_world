@@ -22,12 +22,11 @@ class Square:
     @size.setter
     def size(self, value):
         """setter for attribute size"""
-        if isinstance(value, int) and value >= 0:
-            self.__size = value
-        elif not isinstance(value, int):
+        if not isinstance(value, int):
             raise TypeError("size must be an integer")
-        else:
+        elif value < 0:
             raise ValueError("size must be >= 0")
+        self.__size = value
 
     @property
     def position(self):
@@ -38,15 +37,12 @@ class Square:
     def position(self, value):
         """setter for attribute position"""
         if (
-                isinstance(value, tuple)
-                and len(value) == 2
-                and all(isinstance(n, int) and n >= 0 for n in value)
+                not isinstance(value, tuple)
+                or not len(value) == 2
+                or not all(isinstance(n, int) and n >= 0 for n in value)
         ):
-            self.__position = (value[0], value[1])
-        elif not isinstance(value, tuple):
             raise TypeError("position must be a tuple of 2 positive integers")
-        else:
-            pass
+       self.__position = (value[0], value[1])
 
     def area(self):
         """Represent area of Square"""
