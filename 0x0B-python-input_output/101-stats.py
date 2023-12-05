@@ -1,38 +1,56 @@
-#!/usr/bin/python3
 import sys
+from collections import defaultdict
+import signal
+
+# Dictionary to store file size and status code counts
+file_sizes = defaultdict(int)
+status_code_counts = defaultdict(int)
+
+# Total file size
+total_size = 0
 
 
-def print_status():
-    '''
-        Printing the status of the request
-    '''
-    counter = 0
-    size = 0
-    file_size = 0
-    status_codes = {"200": 0, "301": 0, "400": 0, "401": 0,
-                    "403": 0, "404": 0, "405": 0, "500": 0}
-
-    for l in sys.stdin:
-        line = l.split()
-        try:
-            size += int(line[-1])
-            code = line[-2]
-            status_codes[code] += 1
-        except:
-            continue
-        if counter == 9:
-            print("File size: {}".format(size))
-            for key, val in sorted(status_codes.items()):
-                if (val != 0):
-                    print("{}: {}".format(key, val))
-            counter = 0
-        counter += 1
-    if counter < 9:
-        print("File size: {}".format(size))
-        for key, val in sorted(status_codes.items()):
-            if (val != 0):
-                print("{}: {}".format(key, val))
+# Function to handle keyboard interruption (CTRL + C)
+def signal_handler(signal, frame):
+    print_stats()
+    sys.exit(0)
 
 
-if __name__ == "__main__":
-    print_status()
+# Function to print statistics
+def print_stats():
+    print(f"Total file size: File size: {total_size}")
+
+    # Print status code counts in ascending order
+    for status_code in sorted(status_code_counts):
+        print(f"{status_code}: {status_code_counts[status_code]}")
+
+
+        # Register the signal handler for keyboard interruption
+signal.signal(signal.SIGINT, signal_handler)
+
+try:
+    for line_number, line in enumerate(sys.stdin, start=1):
+        # Split the input line into components
+        components = line.split()
+
+        # Extract file size and status code
+        file_size = int(components[-1])
+        status_code = components[-2]
+
+        # Update total file size
+        total_size += file_size
+
+        # Update file size count
+        file_sizes[line_number % 10] = total_size
+
+        # Update status code count
+        status_code_counts[status_code] += 1
+
+        # Print statistics every 10 lines
+        if line_number % 10 == 0:
+            print_stats()
+
+except KeyboardInterrupt:
+    # Handle keyboard interruption (CTRL + C)
+    print_stats()
+    sys.exit(0)
