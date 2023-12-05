@@ -11,9 +11,13 @@ class Student:
         self.last_name = last_name
         self.age = age
 
-        def to_json(self, attrs=None):
+    def to_json(self, attrs=None):
         '''method to_json'''
-        if (type(attrs) == list and
-            all(type(ele) == str for ele in attrs)):
+        if (type(attrs) == list and all(type(ele) == str for ele in attrs)):
             return {k: getattr(self, k) for k in attrs if hasattr(self, k)}
         return self.__dict__
+
+    def reload_from_json(self, json):
+        '''Replace all attributes of the Student.'''
+        for k, v in json.items():
+            setattr(self, k, v)
