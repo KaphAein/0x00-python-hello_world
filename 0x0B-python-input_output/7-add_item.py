@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 """module that reads a utf-8 file"""
-
-
 import sys
 
 if __name__ == "__main__":
