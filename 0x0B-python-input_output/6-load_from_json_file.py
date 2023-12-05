@@ -5,6 +5,7 @@
 import json
 
 
-def from_json_string(my_str):
+def load_from_json_file(filename):
     """function that reads a utf-8 file"""
-    return json.loads(my_str)
+    with open(filename) as f:
+        return json.load(f)
