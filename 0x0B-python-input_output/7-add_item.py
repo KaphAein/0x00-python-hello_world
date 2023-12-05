@@ -2,7 +2,7 @@
 """module that reads a utf-8 file"""
 
 
-import json
+import sys
 
 
 if __name__ == "__main__":
