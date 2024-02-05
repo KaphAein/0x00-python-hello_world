@@ -3,7 +3,7 @@
 
 
 class MyInt(int):
-    """MyInt Class"""    
+    """MyInt Class"""
     def __eq__(self, other):
         """equal method"""
         return int(self) != int(other)
