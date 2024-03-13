@@ -1,6 +1,6 @@
 -- lists all cities contained in the database hbtn_0d_usa.
-SELECT a.id 
-FROM cities a 
-INNER JOIN states b 
-ON a.state_id = b.id
-ORDER BY a.id ASC;
+SELECT s.title, g.genre_id
+FROM tv_shows AS s
+LEFT JOIN tv_show_genres AS g
+ON s.id = g.show_id
+ORDER BY s.title, g.genre_id;
