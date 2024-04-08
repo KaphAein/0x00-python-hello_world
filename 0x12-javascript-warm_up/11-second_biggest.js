@@ -2,7 +2,7 @@
 // searches the second biggest integer in the list of arguments.
 const [,, ...args] = process.argv;
 
-if (args <= 1) {
+if (args.length <= 1) {
   console.log(0);
 } else {
   const list = args.sort();
