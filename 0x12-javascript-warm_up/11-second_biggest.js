@@ -1,6 +1,6 @@
 #!/usr/bin/node
 // searches the second biggest integer in the list of arguments.
-const (,, ...args) = process.argv;
+const [,, ...args] = process.argv;
 
 if (args <= 1) {
   console.log(0);
