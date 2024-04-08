@@ -3,6 +3,5 @@
 
 const [,, ...args] = process.argv;
 
-if (args.length === 2) {
-  console.log(args[0] + ' is ' + args[1]);
-}
+console.log(args[0] + ' is ' + args[1]);
+
