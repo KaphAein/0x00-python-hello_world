@@ -1,8 +1,5 @@
 #!/usr/bin/node
-let occur = 0;
-
 exports.logMe = function (item) {
-  
-  console.log('${occur}: ${item}');
-  occur++;
+  let n = 0;
+  return function(itemn) { console.log(n++ + ': ' + item); };
 };
