@@ -1,6 +1,9 @@
 #!/usr/bin/node
-const a = process.argv[2];
-const b = process.argv[3];
-const c = process.argv[4];
+const fs = require('fs');
+const [,, a, b, c] = process.argv;
 
-console.log(a + b + c);
+if (!(a && b && c)) process.exit(1);
+
+const fa = fs.readFileSync(a);
+const fb = fs.readFileSync(b);
+fs.writeFileSync(c, fa + fb);
