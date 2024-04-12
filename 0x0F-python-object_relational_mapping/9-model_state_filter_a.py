@@ -13,10 +13,9 @@ if __name__ == "__main__":
 
     session = Session()
 
-    states = session.query(State).order_by(State.id).all()
+    states = session.query(State).filter(State.name.like('%a%'))\
+                                 .order_by(State.id).all()
 
     for state in states:
-        for letter in state.name:
-            if letter == 'a':
-                print("{}: {}".format(state.id, state.name))
+        print("{}: {}".format(state.id, state.name))
     session.close()
