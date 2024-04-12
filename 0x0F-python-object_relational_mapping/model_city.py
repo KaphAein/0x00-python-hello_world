@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 '''Python file that contains the class definition of a City and an instance'''
 from sqlalchemy import Column, Integer, String
-from model_state import Base
+from sqlalchemy.ext.declarative import declarative_base
+
+Base = declarative_base()
 
 
 class City(Base):
