@@ -5,7 +5,7 @@
 def find_peak(list_of_integers):
     '''function body'''
     int_list = list_of_integers
-    if int_list = []:
+    if int_list == []:
         return None
     list_len = len(int_list)
     start, end = 0, list_len - 1
@@ -13,7 +13,7 @@ def find_peak(list_of_integers):
         mid = start + (end - start) // 2
         if (int_list[mid] > int_list[mid - 1]) and (int_list[mid] > int_list[mid + 1]):
             return int_list[mid]
-        else if int_list[mid - 1] > int_list[mid + 1]:
+        elif int_list[mid - 1] > int_list[mid + 1]:
             end = mid
         else:
             start = mid + 1
