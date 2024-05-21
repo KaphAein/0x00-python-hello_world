@@ -7,6 +7,7 @@ request.get(url, (error, response, body) => {
   if (error) {
     console.error('Error:', error);
   } else {
+    const movie = JSON.parse(body);
     console.log(movie.title)
   }
 });
